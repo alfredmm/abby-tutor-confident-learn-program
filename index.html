@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Confident Learner Program – Abby the Tutor | Fall 2026–27 Enrollment</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #F26522;
+    --green: #3AAA35;
+    --blue: #1E88E5;
+    --red: #E53935;
+    --dark: #1a1a2e;
+    --cream: #FFF9F0;
+    --light-orange: #FFF0E6;
+    --light-green: #E8F5E8;
+    --light-blue: #E3F2FD;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--cream);
+    color: #333;
+    overflow-x: hidden;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(135deg, #fff9f0 0%, #e8f5e8 40%, #e3f2fd 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(242,101,34,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: blobFloat 6s ease-in-out infinite;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; right: -80px;
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, rgba(30,136,229,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: blobFloat 7s ease-in-out infinite reverse;
+  }
+
+  @keyframes blobFloat {
+    0%, 100% { transform: translate(0,0) scale(1); }
+    50% { transform: translate(20px, -20px) scale(1.05); }
+  }
+
+  .logo-wrap {
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 2;
+    animation: logoDrop 0.9s cubic-bezier(.34,1.56,.64,1) both;
+  }
+  @keyframes logoDrop {
+    from { opacity: 0; transform: translateY(-60px) scale(0.7); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .logo-wrap img {
+    height: 120px;
+    filter: drop-shadow(0 8px 24px rgba(242,101,34,0.25));
+    animation: logoBounce 3s ease-in-out infinite 1s;
+    transform-origin: bottom center;
+  }
+  @keyframes logoBounce {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25%       { transform: translateY(-8px) rotate(-2deg); }
+    75%       { transform: translateY(-4px) rotate(2deg); }
+  }
+
+  .logo-wrap .sparkle {
+    position: absolute;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    animation: sparklePop 2s ease-in-out infinite;
+  }
+  .sparkle.s1 { background: var(--orange); top: 5px; left: -10px; animation-delay: 0s; }
+  .sparkle.s2 { background: var(--green);  top: 10px; right: -8px; animation-delay: 0.4s; }
+  .sparkle.s3 { background: var(--blue);   bottom: 10px; left: 5px; animation-delay: 0.8s; }
+  .sparkle.s4 { background: var(--red);    bottom: 5px; right: 0px; animation-delay: 1.2s; }
+  @keyframes sparklePop {
+    0%, 100% { transform: scale(0); opacity: 0; }
+    50%       { transform: scale(1.5); opacity: 1; }
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: var(--orange);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 40px;
+    margin-bottom: 20px;
+    animation: fadeSlideUp 0.6s 0.3s both;
+    position: relative; z-index: 2;
+  }
+
+  .hero h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    max-width: 780px;
+    margin-bottom: 20px;
+    position: relative; z-index: 2;
+    animation: fadeSlideUp 0.7s 0.5s both;
+  }
+
+  .h1-orange { color: var(--orange); }
+  .h1-green  { color: var(--green); }
+  .h1-blue   { color: var(--blue); }
+  .h1-red    { color: var(--red); }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: #555;
+    max-width: 640px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    animation: fadeSlideUp 0.7s 0.7s both;
+    position: relative; z-index: 2;
+  }
+
+  .hero-sub2 {
+    font-size: 0.95rem;
+    color: #777;
+    max-width: 580px;
+    line-height: 1.6;
+    margin-bottom: 36px;
+    animation: fadeSlideUp 0.7s 0.75s both;
+    position: relative; z-index: 2;
+  }
+
+  .hero-ctas {
+    display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+    animation: fadeSlideUp 0.7s 0.9s both;
+    position: relative; z-index: 2;
+  }
+
+  .btn-primary {
+    background: var(--orange);
+    color: #fff;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.2rem;
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(242,101,34,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: inline-block;
+  }
+  .btn-primary:hover { transform: translateY(-3px) scale(1.04); box-shadow: 0 12px 30px rgba(242,101,34,0.5); }
+
+  .btn-secondary {
+    background: #fff;
+    color: var(--green);
+    border: 3px solid var(--green);
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.2rem;
+    padding: 14px 36px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+    display: inline-block;
+  }
+  .btn-secondary:hover { background: var(--green); color: #fff; transform: translateY(-3px); }
+
+  @keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===== SCROLLING RIBBON ===== */
+  .ribbon {
+    background: var(--dark);
+    color: #fff;
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .ribbon-track {
+    display: inline-block;
+    animation: ribbonScroll 22s linear infinite;
+  }
+  .ribbon-track span {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1rem;
+    padding: 0 28px;
+  }
+  .ribbon-track span.dot { color: var(--orange); font-size: 1.4rem; padding: 0 8px; }
+  @keyframes ribbonScroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ===== SECTION SHARED ===== */
+  section { padding: 80px 20px; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-tag {
+    display: inline-block;
+    font-size: 0.8rem; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase;
+    padding: 5px 16px; border-radius: 30px; margin-bottom: 14px;
+  }
+  .section-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .section-lead {
+    font-size: 1.1rem; color: #555; line-height: 1.7; max-width: 660px;
+  }
+
+  /* ===== INTRO / MORE THAN TUTORING ===== */
+  .intro-section { background: #fff; }
+  .intro-wrap {
+    max-width: 780px; margin: 0 auto; text-align: center;
+  }
+  .intro-callout {
+    margin-top: 34px;
+    background: var(--light-orange);
+    border-left: 5px solid var(--orange);
+    border-radius: 16px;
+    padding: 28px 32px;
+    text-align: left;
+  }
+  .intro-callout .callout-kicker {
+    font-family: 'Fredoka One', cursive;
+    color: var(--orange);
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+  .intro-callout p { color: #555; font-size: 1rem; line-height: 1.7; }
+
+  /* ===== EXPERIENCE (checklist) ===== */
+  .experience-section { background: var(--cream); }
+  .experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 50px;
+  }
+  .exp-item {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 16px; padding: 22px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .exp-item:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(0,0,0,0.08); }
+  .exp-check {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--light-green); color: var(--green);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; flex-shrink: 0; font-size: 1rem;
+  }
+  .exp-text { font-size: 0.98rem; color: #444; font-weight: 700; line-height: 1.5; }
+
+  /* ===== WHAT'S INCLUDED (monthly program) ===== */
+  .includes-section { background: #fff; }
+  .includes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 50px;
+  }
+  .include-card {
+    border-radius: 20px;
+    padding: 28px 28px 24px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .include-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); }
+  .include-card.orange { background: var(--light-orange); border-left: 5px solid var(--orange); }
+  .include-card.green  { background: var(--light-green);  border-left: 5px solid var(--green); }
+  .include-card.blue   { background: var(--light-blue);   border-left: 5px solid var(--blue); }
+  .include-card.red    { background: #fde8e8;              border-left: 5px solid var(--red); }
+  .card-icon { font-size: 2.4rem; margin-bottom: 12px; }
+  .card-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.25rem; margin-bottom: 8px;
+  }
+  .card-text { font-size: 0.95rem; color: #555; line-height: 1.6; }
+  .card-text ul { margin: 10px 0 0 18px; padding: 0; }
+  .card-text ul li { margin-bottom: 4px; }
+
+  /* ===== PRICING (monthly membership) ===== */
+  .pricing-section {
+    background: linear-gradient(160deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+    color: #fff;
+  }
+  .pricing-section .section-lead { color: rgba(255,255,255,0.7); }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+    margin-top: 50px;
+    max-width: 760px;
+    margin-left: auto; margin-right: auto;
+  }
+  .price-card {
+    border-radius: 24px;
+    padding: 40px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  .price-card:hover { transform: translateY(-8px) scale(1.02); }
+  .price-card.founding { background: linear-gradient(145deg, #F26522, #ff8c42); }
+  .price-card.standard { background: rgba(255,255,255,0.07); border: 2px solid rgba(255,255,255,0.15); }
+  .price-badge {
+    position: absolute; top: 16px; right: -34px;
+    background: var(--red); color: #fff;
+    font-size: 0.7rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 6px 44px; transform: rotate(35deg);
+  }
+  .price-eyebrow {
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.9rem; opacity: 0.9; letter-spacing: 1.5px; text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .price-name {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem; margin-bottom: 18px;
+  }
+  .price-amount {
+    font-family: 'Fredoka One', cursive;
+    font-size: 3.2rem; line-height: 1;
+  }
+  .price-amount-label { font-size: 0.9rem; opacity: 0.85; margin-top: 6px; margin-bottom: 20px; }
+  .price-divider { border: none; border-top: 1px solid rgba(255,255,255,0.3); margin: 20px 0; }
+  .price-desc { font-size: 0.92rem; opacity: 0.9; line-height: 1.6; }
+  .standard .price-eyebrow, .standard .price-desc { opacity: 0.65; }
+
+  .pricing-terms {
+    margin-top: 40px;
+    background: rgba(255,255,255,0.07);
+    border: 2px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 28px 32px;
+    max-width: 760px;
+    margin-left: auto; margin-right: auto;
+    font-size: 0.92rem;
+    opacity: 0.85;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  .hourly-box {
+    margin-top: 28px;
+    background: rgba(255,255,255,0.07);
+    border: 2px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 32px 36px;
+    max-width: 760px;
+    margin-left: auto; margin-right: auto;
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;
+  }
+  .hourly-box h3 {
+    font-family: 'Fredoka One', cursive; font-size: 1.5rem; margin-bottom: 8px;
+  }
+  .hourly-box p { font-size: 0.92rem; opacity: 0.8; max-width: 460px; line-height: 1.6; }
+  .hourly-price {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2.5rem; color: var(--orange); white-space: nowrap;
+  }
+  .hourly-price small { font-size: 1rem; opacity: 0.7; display: block; text-align: center; }
+
+  /* ===== PROMISE ===== */
+  .promise-section {
+    background: var(--cream);
+    text-align: center;
+  }
+  .promise-wrap { max-width: 760px; margin: 0 auto; }
+  .promise-quote {
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(1.4rem, 3.2vw, 2rem);
+    color: var(--dark);
+    line-height: 1.4;
+    margin-bottom: 24px;
+  }
+  .promise-quote .accent { color: var(--orange); }
+  .promise-body { font-size: 1.05rem; color: #555; line-height: 1.8; }
+
+  /* ===== CONTACT SECTION ===== */
+  .contact-section {
+    background: linear-gradient(135deg, #fff9f0, #e8f5e8);
+    padding: 80px 20px;
+  }
+  .contact-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .contact-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 48px;
+  }
+  @media(max-width: 560px) { .contact-cards { grid-template-columns: 1fr; } }
+  .contact-card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 36px 28px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    transition: transform 0.25s, box-shadow 0.25s;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.13); }
+  .contact-card.phone-card { border-top: 5px solid var(--green); }
+  .contact-card.email-card { border-top: 5px solid var(--blue); }
+
+  .contact-icon-wrap {
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .contact-card.phone-card .contact-icon-wrap { background: var(--light-green); }
+  .contact-card.email-card .contact-icon-wrap { background: var(--light-blue); }
+
+  .contact-card.phone-card .contact-icon-wrap::before,
+  .contact-card.phone-card .contact-icon-wrap::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid var(--green);
+    opacity: 0;
+    animation: phoneRing 2.5s ease-out infinite;
+  }
+  .contact-card.phone-card .contact-icon-wrap::before { width: 90px; height: 90px; animation-delay: 0s; }
+  .contact-card.phone-card .contact-icon-wrap::after  { width: 112px; height: 112px; animation-delay: 0.5s; }
+  @keyframes phoneRing {
+    0%   { transform: scale(0.85); opacity: 0.8; }
+    100% { transform: scale(1.3);  opacity: 0; }
+  }
+
+  .phone-svg {
+    width: 34px; height: 34px;
+    animation: phoneShake 2.5s ease-in-out infinite;
+  }
+  @keyframes phoneShake {
+    0%, 100% { transform: rotate(0deg); }
+    10%  { transform: rotate(-15deg); }
+    20%  { transform: rotate(15deg); }
+    30%  { transform: rotate(-10deg); }
+    40%  { transform: rotate(10deg); }
+    50%  { transform: rotate(-5deg); }
+    60%  { transform: rotate(5deg); }
+    70%  { transform: rotate(0deg); }
+  }
+
+  .email-svg {
+    width: 36px; height: 36px;
+    animation: emailBounce 3s ease-in-out infinite;
+  }
+  @keyframes emailBounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    20%       { transform: translateY(-6px) scale(1.08); }
+    40%       { transform: translateY(0) scale(1); }
+    60%       { transform: translateY(-3px) scale(1.04); }
+    80%       { transform: translateY(0) scale(1); }
+  }
+
+  .contact-card.email-card .contact-icon-wrap::before {
+    content: '';
+    position: absolute;
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(30,136,229,0.2) 0%, transparent 70%);
+    animation: emailGlow 3s ease-in-out infinite;
+  }
+  @keyframes emailGlow {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50%       { opacity: 1; transform: scale(1.15); }
+  }
+
+  .contact-label {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .contact-card.phone-card .contact-label { color: var(--green); }
+  .contact-card.email-card .contact-label { color: var(--blue); }
+
+  .contact-value {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.35rem;
+    color: var(--dark);
+    word-break: break-word;
+    text-align: center;
+  }
+  .contact-hint {
+    font-size: 0.85rem;
+    color: #888;
+    font-weight: 600;
+  }
+
+  .contact-chip {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-top: 4px;
+  }
+  .contact-card.phone-card .contact-chip { background: var(--light-green); color: var(--green); }
+  .contact-card.email-card .contact-chip { background: var(--light-blue); color: var(--blue); }
+
+  /* ===== ENROLL / FINAL CTA ===== */
+  .payment-section {
+    background: linear-gradient(120deg, #fff9f0, #e8f5e8);
+    text-align: center;
+    padding: 80px 20px;
+  }
+  .payment-box {
+    background: #fff;
+    border-radius: 28px;
+    padding: 52px 44px;
+    max-width: 680px;
+    margin: 0 auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+  }
+  .payment-box h2 { font-family: 'Fredoka One', cursive; font-size: 2.2rem; margin-bottom: 12px; color: var(--dark); }
+  .payment-box p { font-size: 1rem; color: #555; line-height: 1.7; margin-bottom: 20px; }
+  .founding-badge {
+    background: linear-gradient(135deg, var(--orange), var(--red));
+    color: #fff; border-radius: 20px; padding: 24px 32px; margin-bottom: 24px;
+    display: inline-block;
+  }
+  .founding-badge .amount {
+    font-family: 'Fredoka One', cursive; font-size: 2.6rem; display: block; line-height: 1;
+  }
+  .founding-badge .label { font-size: 0.9rem; opacity: 0.9; }
+  .spots-note {
+    font-size: 0.9rem; color: var(--red); font-weight: 800; margin-bottom: 24px;
+  }
+  .cta-final {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--orange), var(--red));
+    color: #fff; font-family: 'Fredoka One', cursive; font-size: 1.35rem;
+    padding: 18px 52px; border-radius: 60px;
+    text-decoration: none;
+    box-shadow: 0 8px 30px rgba(242,101,34,0.45);
+    transition: transform 0.25s, box-shadow 0.25s;
+    animation: pulseGlow 2.5s ease-in-out infinite;
+  }
+  .cta-final:hover { transform: scale(1.06) translateY(-3px); box-shadow: 0 16px 40px rgba(242,101,34,0.55); }
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 8px 30px rgba(242,101,34,0.45); }
+    50%       { box-shadow: 0 8px 50px rgba(242,101,34,0.7); }
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--dark); color: rgba(255,255,255,0.75);
+    text-align: center; padding: 40px 20px;
+    font-size: 0.9rem;
+  }
+  footer img { height: 90px; margin-bottom: 16px; filter: brightness(1.1); }
+  footer .tagline { font-style: italic; margin-bottom: 8px; color: rgba(255,255,255,0.55); }
+  footer a { color: var(--orange); text-decoration: none; }
+  footer .fine-print { margin-top: 10px; font-size: 0.78rem; opacity: 0.5; }
+
+  /* ===== SCROLL ANIMATIONS ===== */
+  .reveal {
+    opacity: 0; transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ===== RESPONSIVE ===== */
+  @media(max-width:600px){
+    .pricing-grid { grid-template-columns: 1fr; }
+    .payment-box { padding: 36px 24px; }
+    .hourly-box { flex-direction: column; }
+    .hero-ctas { flex-direction: column; align-items: center; }
+    .price-badge { right: -40px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="logo-wrap">
+    <img src="https://abby-the-tutor.lovable.app/assets/abby-logo-RNpTp_Xk.png" alt="Abby the Tutor Logo">
+    <div class="sparkle s1"></div>
+    <div class="sparkle s2"></div>
+    <div class="sparkle s3"></div>
+    <div class="sparkle s4"></div>
+  </div>
+  <div class="hero-badge">🍂 Fall 2026–27 Enrollment Open</div>
+  <h1>
+    <span class="h1-orange">The Confident</span><br>
+    <span class="h1-green">Learner Program</span>
+  </h1>
+  <p class="hero-sub">
+    Personalized K–5 academic support for a <strong>stronger, more confident school year</strong>.
+  </p>
+  <p class="hero-sub2">
+    Consistent instruction, a personalized plan, and ongoing support — all month long, not just during the session.
+  </p>
+  <div class="hero-ctas">
+    <a href="#pricing" class="btn-primary">🎒 See Enrollment Options</a>
+    <a href="#contact" class="btn-secondary">📞 Reserve a Spot</a>
+  </div>
+</section>
+
+<!-- ===== RIBBON ===== -->
+<div class="ribbon">
+  <div class="ribbon-track">
+    <span>📋 Personalized Learning Success Plan</span><span class="dot">•</span>
+    <span>✏️ 8 Private Sessions Monthly</span><span class="dot">•</span>
+    <span>📊 Weekly Parent Updates</span><span class="dot">•</span>
+    <span>📈 Progress Monitoring</span><span class="dot">•</span>
+    <span>🌟 Kindergarten Through 5th Grade</span><span class="dot">•</span>
+    <span>📋 Personalized Learning Success Plan</span><span class="dot">•</span>
+    <span>✏️ 8 Private Sessions Monthly</span><span class="dot">•</span>
+    <span>📊 Weekly Parent Updates</span><span class="dot">•</span>
+    <span>📈 Progress Monitoring</span><span class="dot">•</span>
+    <span>🌟 Kindergarten Through 5th Grade</span><span class="dot">•</span>
+  </div>
+</div>
+
+<!-- ===== INTRO ===== -->
+<section class="intro-section">
+  <div class="container">
+    <div class="intro-wrap">
+      <span class="section-tag" style="background:var(--light-blue); color:var(--blue);">The Program</span>
+      <h2 class="section-title">Designed for Steady, <span style="color:var(--green)">Real Growth</span></h2>
+      <p class="section-lead" style="margin:0 auto">
+        The Confident Learner Program is built for K–5 students who need support strengthening their math, reading, or writing skills, closing learning gaps, and becoming more independent learners.
+      </p>
+      <div class="intro-callout reveal">
+        <div class="callout-kicker">This is more than weekly tutoring.</div>
+        <p>Your child receives a personalized academic plan, consistent instruction, progress monitoring, and ongoing support throughout the month — so growth doesn't stop between sessions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT YOUR CHILD WILL EXPERIENCE ===== -->
+<section class="experience-section">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="section-tag" style="background:var(--light-green); color:var(--green);">What Your Child Will Experience</span>
+      <h2 class="section-title">Through Structured, <span style="color:var(--orange)">Individualized Instruction</span></h2>
+      <p class="section-lead" style="margin:0 auto">Your child will grow in these key areas throughout the program.</p>
+    </div>
+    <div class="experience-grid reveal">
+      <div class="exp-item"><div class="exp-check">✓</div><div class="exp-text">Strengthen essential math, reading, and writing skills</div></div>
+      <div class="exp-item"><div class="exp-check">✓</div><div class="exp-text">Close learning gaps before they become larger</div></div>
+      <div class="exp-item"><div class="exp-check">✓</div><div class="exp-text">Develop stronger study and problem-solving habits</div></div>
+      <div class="exp-item"><div class="exp-check">✓</div><div class="exp-text">Become more confident when completing schoolwork</div></div>
+      <div class="exp-item"><div class="exp-check">✓</div><div class="exp-text">Learn how to work more independently</div></div>
+      <div class="exp-item"><div class="exp-check">✓</div><div class="exp-text">Build a stronger foundation for long-term academic success</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MONTHLY PROGRAM INCLUDES ===== -->
+<section class="includes-section">
+  <div class="container">
+    <div style="text-align:center; margin-bottom: 0;">
+      <span class="section-tag" style="background:var(--light-orange); color:var(--orange);">Monthly Program Includes</span>
+      <h2 class="section-title">Everything Your Child Needs to <span style="color:var(--blue)">Keep Growing</span></h2>
+      <p class="section-lead" style="margin:0 auto">A thoughtfully structured program with support that continues all month long.</p>
+    </div>
+    <div class="includes-grid reveal">
+      <div class="include-card blue">
+        <div class="card-icon">📅</div>
+        <div class="card-title" style="color:var(--blue)">8 Private Instruction Sessions</div>
+        <p class="card-text">Two personalized 60-minute sessions each week, designed around your child's specific needs, learning style, and academic goals.</p>
+      </div>
+      <div class="include-card orange">
+        <div class="card-icon">🔍</div>
+        <div class="card-title" style="color:var(--orange)">Initial Academic Skill Review</div>
+        <p class="card-text">We begin by identifying your child's current strengths, learning gaps, and priority areas for improvement.</p>
+      </div>
+      <div class="include-card green">
+        <div class="card-icon">📋</div>
+        <div class="card-title" style="color:var(--green)">Personalized Learning Success Plan</div>
+        <p class="card-text">A clear plan outlining the skills we will strengthen and the goals we will work toward together.</p>
+      </div>
+      <div class="include-card red">
+        <div class="card-icon">📬</div>
+        <div class="card-title" style="color:var(--red)">Weekly Parent Updates</div>
+        <p class="card-text">Regular updates explaining:
+          <ul>
+            <li>What we worked on</li>
+            <li>Progress your child is making</li>
+            <li>Areas that still need support</li>
+            <li>Ways you can reinforce learning at home</li>
+          </ul>
+        </p>
+      </div>
+      <div class="include-card orange">
+        <div class="card-icon">🏠</div>
+        <div class="card-title" style="color:var(--orange)">At-Home Practice Activities</div>
+        <p class="card-text">Simple, targeted activities that support your child's progress without overwhelming your family.</p>
+      </div>
+      <div class="include-card green">
+        <div class="card-icon">📈</div>
+        <div class="card-title" style="color:var(--green)">Progress Monitoring</div>
+        <p class="card-text">Your child's growth is monitored throughout the program so instruction can be adjusted as their needs change.</p>
+      </div>
+      <div class="include-card blue">
+        <div class="card-icon">🗓️</div>
+        <div class="card-title" style="color:var(--blue)">Monthly Parent Progress Meeting</div>
+        <p class="card-text">At the end of each month, we review your child's progress, celebrate improvements, and set goals for the following month.</p>
+      </div>
+      <div class="include-card red">
+        <div class="card-icon">💬</div>
+        <div class="card-title" style="color:var(--red)">Between-Session Support</div>
+        <p class="card-text">Reach out anytime with brief questions about assignments, learning concerns, or recommended practice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="section-tag" style="background:rgba(255,255,255,0.12); color:#fff;">Your Investment</span>
+      <h2 class="section-title">Enroll for a <span style="color:var(--orange)">Confident Tutoring Program</span></h2>
+      <p class="section-lead" style="margin:0 auto">A monthly membership built for consistency, momentum, and real progress.</p>
+    </div>
+
+    <div class="pricing-grid reveal">
+
+      <div class="price-card founding">
+        <div class="price-badge">Limited Spots</div>
+        <div class="price-eyebrow">Founding Family Rate</div>
+        <div class="price-name">Confident Learner Program</div>
+        <div class="price-amount">$695</div>
+        <div class="price-amount-label">per month</div>
+        <hr class="price-divider">
+        <p class="price-desc">This preferred rate is available to a limited number of families enrolling for the fall semester. Includes eight private sessions and all planning, communication, progress monitoring, and family support.</p>
+      </div>
+
+      <div class="price-card standard">
+        <div class="price-eyebrow">Standard Program Rate</div>
+        <div class="price-name">Confident Learner Program</div>
+        <div class="price-amount">$795</div>
+        <div class="price-amount-label">per month</div>
+        <hr class="price-divider">
+        <p class="price-desc">The standard rate will apply to future enrollments after the founding-family spaces have been filled.</p>
+      </div>
+
+    </div>
+
+    <div class="pricing-terms reveal">
+      Enrollment automatically continues each month to help your child maintain consistency and momentum. A 30-day notice is required to pause or end enrollment.
+    </div>
+
+    <div class="hourly-box reveal">
+      <div>
+        <h3>Prefer Individual Sessions?</h3>
+        <p>Private instruction is available for $75 per 60-minute session. Individual sessions include personalized teaching during the scheduled lesson but do not include a comprehensive learning plan, weekly parent updates, monthly progress meetings, or between-session support.</p>
+      </div>
+      <div style="text-align:center;">
+        <div class="hourly-price">$75<small>/session</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THE PROMISE ===== -->
+<section class="promise-section">
+  <div class="container">
+    <div class="promise-wrap reveal">
+      <span class="section-tag" style="background:var(--light-blue); color:var(--blue);">The Promise</span>
+      <p class="promise-quote">We are not simply preparing your child for the <span class="accent">next assignment</span>.</p>
+      <p class="promise-body">Together, we will build stronger academic skills and develop a confident, independent learner through a structured plan tailored to your child's needs. We are building the foundation they need to succeed in school, communicate confidently, solve problems, and grow into a capable global leader.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT SECTION ===== -->
+<section class="contact-section" id="contact">
+  <div class="contact-wrapper">
+    <span class="section-tag" style="background:var(--light-orange); color:var(--orange);">Get in Touch</span>
+    <h2 class="section-title">Ready to Book a <span style="color:var(--green)">Consultation?</span></h2>
+    <p class="section-lead" style="margin: 0 auto 0;">Reach out by phone or email — we'd love to connect and find the perfect plan for your child.</p>
+
+    <div class="contact-cards reveal">
+
+      <!-- Phone -->
+      <a href="tel:+14045630955" class="contact-card phone-card">
+        <div class="contact-icon-wrap">
+          <svg class="phone-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.62 10.79C8.06 13.62 10.38 15.93 13.21 17.38L15.41 15.18C15.68 14.91 16.08 14.82 16.43 14.94C17.55 15.31 18.76 15.51 20 15.51C20.55 15.51 21 15.96 21 16.51V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z" fill="#3AAA35"/>
+          </svg>
+        </div>
+        <div class="contact-label">Call or Text</div>
+        <div class="contact-value">+1 (404) 563-0955</div>
+        <div class="contact-hint">Available for calls, texts &amp; Zelle</div>
+        <div class="contact-chip">Tap to Call</div>
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:abbythetutor404@gmail.com" class="contact-card email-card">
+        <div class="contact-icon-wrap">
+          <svg class="email-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="#1E88E5"/>
+          </svg>
+        </div>
+        <div class="contact-label">Send an Email</div>
+        <div class="contact-value" style="font-size:1.05rem;">abbythetutor404<br>@gmail.com</div>
+        <div class="contact-hint">Responses within 24 hours</div>
+        <div class="contact-chip">Tap to Email</div>
+      </a>
+
+    </div>
+
+    <!-- Book consultation CTA -->
+    <div style="margin-top: 44px;">
+      <a href="https://abby-the-tutor.lovable.app/" class="cta-final" target="_blank">
+        🎒 Book a Consultation Call!
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ENROLL / FINAL CTA ===== -->
+<section class="payment-section" id="enroll">
+  <div class="payment-box reveal">
+    <h2>Fall Enrollment Is Now Open!</h2>
+    <p>A limited number of founding-family spaces are available. Enroll your child in The Confident Learner Program and begin the school year with clarity, consistency, and a personalized plan for success.</p>
+
+    <div class="founding-badge">
+      <span class="amount">$695/mo</span>
+      <span class="label">Founding Family Rate · 8 Sessions Included</span>
+    </div>
+
+    <div class="spots-note">⚡ Only a limited number of founding-family spaces remain</div>
+
+    <a href="#contact" class="cta-final">
+      📞 Contact Us to Enroll
+    </a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <img src="https://abby-the-tutor.lovable.app/assets/abby-logo-DHD39Yy5.png" alt="Abby the Tutor">
+  <p class="tagline">Helping learners grow in confidence, independence, and joy.</p>
+  <p>
+    <a href="tel:+14045630955">+1 (404) 563-0955</a>
+    &nbsp;·&nbsp;
+    <a href="mailto:abbythetutor404@gmail.com">abbythetutor404@gmail.com</a>
+  </p>
+  <p style="margin-top:8px;">
+    <a href="https://abby-the-tutor.lovable.app/" target="_blank">abby-the-tutor.lovable.app</a>
+  </p>
+  <p class="fine-print">School supplies have to be reimbursed.</p>
+  <p style="margin-top:12px; font-size:0.8rem; opacity:0.45;">© 2026 Abby the Tutor · The Confident Learner Program · K–5</p>
+</footer>
+
+<script>
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
