@@ -244,14 +244,60 @@
     border-radius: 16px;
     padding: 28px 32px;
     text-align: left;
+    position: relative;
+    overflow: visible;
   }
   .intro-callout .callout-kicker {
     font-family: 'Fredoka One', cursive;
     color: var(--orange);
     font-size: 1.3rem;
     margin-bottom: 8px;
+    padding-right: 70px;
   }
   .intro-callout p { color: #555; font-size: 1rem; line-height: 1.7; }
+
+  .callout-avatar-wrap {
+    position: absolute;
+    top: -18px;
+    right: -14px;
+    width: 76px;
+    height: 76px;
+  }
+  .callout-avatar-wrap img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    display: block;
+  }
+  .callout-verified-badge {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--blue);
+    border: 3px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: verifiedPop 0.5s cubic-bezier(.34,1.56,.64,1) 0.6s both, verifiedPulse 2.4s ease-in-out 1.2s infinite;
+  }
+  .callout-verified-badge svg {
+    width: 13px;
+    height: 13px;
+  }
+  @keyframes verifiedPop {
+    from { opacity: 0; transform: scale(0); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  @keyframes verifiedPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(30,136,229,0.5); }
+    50%       { box-shadow: 0 0 0 6px rgba(30,136,229,0); }
+  }
 
   /* ===== EXPERIENCE (checklist) ===== */
   .experience-section { background: var(--cream); }
@@ -344,7 +390,7 @@
   }
   .price-name {
     font-family: 'Fredoka One', cursive;
-    font-size: 1.4rem; margin-bottom: 6px;
+    font-size: 1.1rem; margin-bottom: 4px;
   }
   .price-sessions {
     font-size: 0.88rem; opacity: 0.85; margin-bottom: 18px;
@@ -641,6 +687,8 @@
     .hourly-box { flex-direction: column; }
     .hero-ctas { flex-direction: column; align-items: center; }
     .price-badge { right: -40px; }
+    .callout-avatar-wrap { width: 60px; height: 60px; top: -14px; right: -10px; }
+    .intro-callout .callout-kicker { padding-right: 56px; }
   }
 </style>
 </head>
@@ -698,8 +746,16 @@
         The Confident Learner Program is built for K–5 students who need support strengthening their math, reading, or writing skills, closing learning gaps, and becoming more independent learners.
       </p>
       <div class="intro-callout reveal">
-        <div class="callout-kicker">This is more than weekly tutoring.</div>
-        <p>Your child receives a personalized academic plan, consistent instruction, progress monitoring, and ongoing support throughout the month — so growth doesn't stop between sessions.</p>
+        <div class="callout-avatar-wrap">
+          <img src="https://abby-the-tutor.lovable.app/assets/abby-profile-DA-GAXnd.png" alt="Abby the Tutor">
+          <div class="callout-verified-badge">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" fill="#fff"/>
+            </svg>
+          </div>
+        </div>
+        <div class="callout-kicker">This is more than tutoring.</div>
+        <p>With 17 years of teaching experience, I identify learning gaps and provide personalized support that builds stronger skills, confidence, and independence.</p>
       </div>
     </div>
   </div>
@@ -797,7 +853,7 @@
 
       <div class="price-card essentials">
         <div class="price-eyebrow">Essentials Package</div>
-        <div class="price-name">Get Started</div>
+        <div class="price-name">Maintain & Strengthen Skills</div>
         <div class="price-sessions">1 session per week · 4 sessions/month</div>
         <div class="price-amount">$375</div>
         <div class="price-amount-label">per month</div>
@@ -806,9 +862,9 @@
       </div>
 
       <div class="price-card success" style="position:relative">
-        <div class="price-badge">Best Value</div>
+        <div class="price-badge">&nbsp;&nbsp;&nbsp;&nbsp; Recommended</div>
         <div class="price-eyebrow">Success Package</div>
-        <div class="price-name">Most Popular</div>
+        <div class="price-name">Close Gaps and Build Confidence</div>
         <div class="price-sessions">2 sessions per week · 8 sessions/month</div>
         <div class="price-amount">$695</div>
         <div class="price-amount-label">per month</div>
@@ -818,7 +874,7 @@
 
       <div class="price-card accelerated">
         <div class="price-eyebrow">Accelerated Package</div>
-        <div class="price-name">Maximum Momentum</div>
+        <div class="price-name">Intensive Support and Faster Progress</div>
         <div class="price-sessions">3 sessions per week · 12 sessions/month</div>
         <div class="price-amount">$995</div>
         <div class="price-amount-label">per month</div>
