@@ -313,23 +313,24 @@
   .pricing-section .section-lead { color: rgba(255,255,255,0.7); }
   .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 28px;
     margin-top: 50px;
-    max-width: 760px;
+    max-width: 1020px;
     margin-left: auto; margin-right: auto;
   }
   .price-card {
     border-radius: 24px;
-    padding: 40px 32px;
+    padding: 40px 30px;
     text-align: center;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s;
   }
   .price-card:hover { transform: translateY(-8px) scale(1.02); }
-  .price-card.founding { background: linear-gradient(145deg, #F26522, #ff8c42); }
-  .price-card.standard { background: rgba(255,255,255,0.07); border: 2px solid rgba(255,255,255,0.15); }
+  .price-card.essentials { background: rgba(255,255,255,0.07); border: 2px solid rgba(255,255,255,0.15); }
+  .price-card.success { background: linear-gradient(145deg, #F26522, #ff8c42); }
+  .price-card.accelerated { background: linear-gradient(145deg, #1E88E5, #42a5f5); }
   .price-badge {
     position: absolute; top: 16px; right: -34px;
     background: var(--red); color: #fff;
@@ -343,19 +344,36 @@
   }
   .price-name {
     font-family: 'Fredoka One', cursive;
-    font-size: 1.5rem; margin-bottom: 18px;
+    font-size: 1.4rem; margin-bottom: 6px;
+  }
+  .price-sessions {
+    font-size: 0.88rem; opacity: 0.85; margin-bottom: 18px;
   }
   .price-amount {
     font-family: 'Fredoka One', cursive;
-    font-size: 3.2rem; line-height: 1;
+    font-size: 2.8rem; line-height: 1;
   }
-  .price-amount-label { font-size: 0.9rem; opacity: 0.85; margin-top: 6px; margin-bottom: 20px; }
+  .price-amount-label { font-size: 0.88rem; opacity: 0.85; margin-top: 6px; margin-bottom: 20px; }
   .price-divider { border: none; border-top: 1px solid rgba(255,255,255,0.3); margin: 20px 0; }
-  .price-desc { font-size: 0.92rem; opacity: 0.9; line-height: 1.6; }
-  .standard .price-eyebrow, .standard .price-desc { opacity: 0.65; }
+  .price-desc { font-size: 0.9rem; opacity: 0.9; line-height: 1.6; }
+  .essentials .price-eyebrow, .essentials .price-desc { opacity: 0.65; }
+
+  .founding-note {
+    margin-top: 36px;
+    max-width: 760px;
+    margin-left: auto; margin-right: auto;
+    background: rgba(255,255,255,0.07);
+    border: 2px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 20px 28px;
+    font-size: 0.9rem;
+    opacity: 0.85;
+    line-height: 1.6;
+    text-align: center;
+  }
 
   .pricing-terms {
-    margin-top: 40px;
+    margin-top: 20px;
     background: rgba(255,255,255,0.07);
     border: 2px solid rgba(255,255,255,0.15);
     border-radius: 20px;
@@ -756,31 +774,47 @@
   <div class="container">
     <div style="text-align:center;">
       <span class="section-tag" style="background:rgba(255,255,255,0.12); color:#fff;">Your Investment</span>
-      <h2 class="section-title">Enroll for a <span style="color:var(--orange)">Confident Tutoring Program</span></h2>
+      <h2 class="section-title">Enroll for a <span style="color:var(--orange)">Confident School Year</span></h2>
       <p class="section-lead" style="margin:0 auto">A monthly membership built for consistency, momentum, and real progress.</p>
     </div>
 
     <div class="pricing-grid reveal">
 
-      <div class="price-card founding">
-        <div class="price-badge">Limited Spots</div>
-        <div class="price-eyebrow">Founding Family Rate</div>
-        <div class="price-name">Confident Learner Program</div>
+      <div class="price-card essentials">
+        <div class="price-eyebrow">Essentials Program</div>
+        <div class="price-name">Get Started</div>
+        <div class="price-sessions">1 session per week · 4 sessions/month</div>
+        <div class="price-amount">$395</div>
+        <div class="price-amount-label">per month</div>
+        <hr class="price-divider">
+        <p class="price-desc">A steady starting point for families who want consistent support along with the full Confident Learner planning and progress-monitoring experience.</p>
+      </div>
+
+      <div class="price-card success" style="position:relative">
+        <div class="price-badge">Founding Rate</div>
+        <div class="price-eyebrow">Success Program</div>
+        <div class="price-name">Most Popular</div>
+        <div class="price-sessions">2 sessions per week · 8 sessions/month</div>
         <div class="price-amount">$695</div>
         <div class="price-amount-label">per month</div>
         <hr class="price-divider">
-        <p class="price-desc">This preferred rate is available to a limited number of families enrolling for the fall semester. Includes eight private sessions and all planning, communication, progress monitoring, and family support.</p>
+        <p class="price-desc">Our recommended pace for closing gaps and building lasting confidence. Includes all planning, communication, progress monitoring, and family support.</p>
       </div>
 
-      <div class="price-card standard">
-        <div class="price-eyebrow">Standard Program Rate</div>
-        <div class="price-name">Confident Learner Program</div>
-        <div class="price-amount">$795</div>
+      <div class="price-card accelerated">
+        <div class="price-eyebrow">Accelerated Program</div>
+        <div class="price-name">Maximum Momentum</div>
+        <div class="price-sessions">3 sessions per week · 12 sessions/month</div>
+        <div class="price-amount">$995</div>
         <div class="price-amount-label">per month</div>
         <hr class="price-divider">
-        <p class="price-desc">The standard rate will apply to future enrollments after the founding-family spaces have been filled.</p>
+        <p class="price-desc">For families ready to move quickly — the fastest path to closing gaps, building fluency, and gaining lasting academic confidence.</p>
       </div>
 
+    </div>
+
+    <div class="founding-note reveal">
+      ⚡ The Success Program's <strong>$695/month founding family rate</strong> is available to a limited number of families enrolling for the fall semester. The standard rate will apply to future enrollments after founding-family spaces have been filled.
     </div>
 
     <div class="pricing-terms reveal">
